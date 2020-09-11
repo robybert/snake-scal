@@ -1,0 +1,116 @@
+qList(Point(3,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1))
+apple: Point(3,0)
+qList(Point(3,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1))
+apple: Point(3,0)
+qList(Point(3,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1))
+apple: Point(5,1)
+)List(Point(3,0), Point(4,0), Point(5,0))
+apple: Point(5,0)
+)List(Point(0,0), Point(1,0), Point(2,0))
+apple: Point(2,0)
+qList(Point(3,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1))
+apple: Point(0,1)
+°List(Point(3,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3))
+apple: Point(1,1)
+	qList(Point(3,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1))
+	apple: Point(2,1)
+
+qList(Point(3,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2))
+
+apple: Point(3,1)
+qList(Point(3,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2))
+apple: Point(3,1)
+—List(Point(3,0), Point(4,0), Point(5,0), Point(6,0), Point(7,0), Point(8,0), Point(9,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(6,1), Point(7,1), Point(8,1), Point(9,1))
+apple: Point(4,0)
+—List(Point(0,0), Point(1,0), Point(5,0), Point(6,0), Point(7,0), Point(8,0), Point(9,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(6,1), Point(7,1), Point(8,1), Point(9,1))
+apple: Point(3,1)
+πList(Point(3,0), Point(4,0), Point(5,0), Point(6,0), Point(7,0), Point(8,0), Point(9,0), Point(10,0), Point(11,0), Point(12,0), Point(13,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(6,1), Point(7,1), Point(8,1), Point(9,1), Point(10,1), Point(11,1), Point(12,1), Point(13,1))
+apple: Point(3,0)
+πList(Point(0,0), Point(4,0), Point(5,0), Point(6,0), Point(7,0), Point(8,0), Point(9,0), Point(10,0), Point(11,0), Point(12,0), Point(13,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(6,1), Point(7,1), Point(8,1), Point(9,1), Point(10,1), Point(11,1), Point(12,1), Point(13,1))
+apple: Point(5,0)
+°List(Point(0,0), Point(6,0), Point(7,0), Point(8,0), Point(9,0), Point(10,0), Point(11,0), Point(12,0), Point(13,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(6,1), Point(7,1), Point(8,1), Point(9,1), Point(10,1), Point(11,1), Point(12,1), Point(13,1))
+apple: Point(1,1)
+qList(Point(3,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1))
+apple: Point(3,1)
+°List(Point(3,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3))
+apple: Point(1,1)
+°List(Point(3,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3))
+apple: Point(1,2)
+°List(Point(3,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3))
+apple: Point(1,1)
+πList(Point(3,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2))
+apple: Point(3,0)
+πList(Point(0,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2))
+apple: Point(3,1)
+qList(Point(3,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1))
+apple: Point(3,0)
+qList(Point(0,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1))
+apple: Point(0,1)
+—List(Point(3,0), Point(4,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3))
+apple: Point(3,0)
+—List(Point(0,0), Point(4,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3))
+apple: Point(0,0)
+ëList(Point(3,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(4,4), Point(5,4), Point(0,5), Point(1,5), Point(2,5), Point(3,5), Point(4,5), Point(5,5))
+apple: Point(5,0)
+ëList(Point(0,0), Point(1,0), Point(2,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(4,4), Point(5,4), Point(0,5), Point(1,5), Point(2,5), Point(3,5), Point(4,5), Point(5,5))
+apple: Point(2,0)
+ÌList(Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(4,4), Point(5,4), Point(0,5), Point(1,5), Point(2,5), Point(3,5), Point(4,5), Point(5,5))
+apple: Point(2,1)
+·List(Point(0,1), Point(1,1), Point(3,1), Point(4,1), Point(5,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(4,4), Point(5,4), Point(0,5), Point(1,5), Point(2,5), Point(3,5), Point(4,5), Point(5,5))
+apple: Point(3,1)
+•List(Point(3,0), Point(4,0), Point(0,2), Point(3,2), Point(4,2), Point(5,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(4,4), Point(5,4), Point(0,5), Point(1,5), Point(2,5), Point(3,5), Point(4,5), Point(5,5))
+apple: Point(0,2)
+ÅList(Point(0,0), Point(1,0), Point(2,0), Point(4,0), Point(5,0), Point(2,1), Point(3,2), Point(4,2), Point(5,2), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(4,4), Point(5,4), Point(0,5), Point(1,5), Point(2,5), Point(4,5), Point(5,5))
+apple: Point(2,0)
+πList(Point(3,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2))
+apple: Point(5,0)
+πList(Point(0,0), Point(1,0), Point(2,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2))
+apple: Point(2,0)
+ïList(Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2))
+apple: Point(2,1)
+}List(Point(0,1), Point(1,1), Point(3,1), Point(4,1), Point(5,1), Point(0,2), Point(1,2), Point(3,2), Point(4,2), Point(5,2))
+apple: Point(3,1)
+MList(Point(3,0), Point(0,2), Point(1,2), Point(3,2), Point(4,2), Point(5,2))
+apple: Point(1,2)
+)List(Point(3,0), Point(4,0), Point(5,0))
+apple: Point(5,0)
+©List(Point(3,0), Point(4,0), Point(5,0), Point(6,0), Point(7,0), Point(8,0), Point(9,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(6,1), Point(7,1), Point(8,1), Point(9,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2), Point(6,2), Point(7,2), Point(8,2), Point(9,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(6,3), Point(7,3), Point(8,3), Point(9,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(4,4), Point(5,4), Point(6,4), Point(7,4), Point(8,4), Point(9,4), Point(0,5), Point(1,5), Point(2,5), Point(3,5), Point(4,5), Point(5,5), Point(6,5), Point(7,5), Point(8,5), Point(9,5), Point(0,6), Point(1,6), Point(2,6), Point(3,6), Point(4,6), Point(5,6), Point(6,6), Point(7,6), Point(8,6), Point(9,6))
+apple: Point(5,0)
+©List(Point(0,0), Point(1,0), Point(2,0), Point(6,0), Point(7,0), Point(8,0), Point(9,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(6,1), Point(7,1), Point(8,1), Point(9,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2), Point(6,2), Point(7,2), Point(8,2), Point(9,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(6,3), Point(7,3), Point(8,3), Point(9,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(4,4), Point(5,4), Point(6,4), Point(7,4), Point(8,4), Point(9,4), Point(0,5), Point(1,5), Point(2,5), Point(3,5), Point(4,5), Point(5,5), Point(6,5), Point(7,5), Point(8,5), Point(9,5), Point(0,6), Point(1,6), Point(2,6), Point(3,6), Point(4,6), Point(5,6), Point(6,6), Point(7,6), Point(8,6), Point(9,6))
+apple: Point(2,0)
+ÖList(Point(3,0), Point(4,0), Point(5,0), Point(6,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(6,1), Point(7,1), Point(8,1), Point(9,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2), Point(6,2), Point(7,2), Point(8,2), Point(9,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(6,3), Point(7,3), Point(8,3), Point(9,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(4,4), Point(5,4), Point(6,4), Point(7,4), Point(8,4), Point(9,4), Point(0,5), Point(1,5), Point(2,5), Point(3,5), Point(4,5), Point(5,5), Point(6,5), Point(7,5), Point(8,5), Point(9,5), Point(0,6), Point(1,6), Point(2,6), Point(3,6), Point(4,6), Point(5,6), Point(6,6), Point(7,6), Point(8,6), Point(9,6))
+apple: Point(5,0)
+·List(Point(6,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(6,1), Point(7,1), Point(8,1), Point(9,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2), Point(6,2), Point(7,2), Point(8,2), Point(9,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(6,3), Point(7,3), Point(8,3), Point(9,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(4,4), Point(5,4), Point(6,4), Point(7,4), Point(8,4), Point(9,4), Point(0,5), Point(1,5), Point(2,5), Point(3,5), Point(4,5), Point(5,5), Point(6,5), Point(7,5), Point(8,5), Point(9,5), Point(0,6), Point(1,6), Point(2,6), Point(3,6), Point(4,6), Point(5,6), Point(6,6), Point(7,6), Point(8,6), Point(9,6))
+apple: Point(1,1)
+ΩList(Point(0,0), Point(1,0), Point(2,0), Point(3,0), Point(4,0), Point(5,0), Point(6,0), Point(7,0), Point(8,0), Point(9,0), Point(0,1), Point(5,1), Point(6,1), Point(7,1), Point(8,1), Point(9,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(5,2), Point(6,2), Point(7,2), Point(8,2), Point(9,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(5,3), Point(6,3), Point(7,3), Point(8,3), Point(9,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(5,4), Point(6,4), Point(7,4), Point(8,4), Point(9,4), Point(5,5), Point(6,5), Point(7,5), Point(8,5), Point(9,5), Point(0,6), Point(1,6), Point(2,6), Point(3,6), Point(4,6), Point(5,6), Point(6,6), Point(7,6), Point(8,6), Point(9,6))
+apple: Point(2,0)
+ôList(Point(0,0), Point(1,0), Point(9,0), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(6,1), Point(7,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2), Point(6,2), Point(7,2), Point(9,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(6,3), Point(7,3), Point(9,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(4,4), Point(5,4), Point(6,4), Point(7,4), Point(9,4), Point(0,5), Point(1,5), Point(2,5), Point(3,5), Point(4,5), Point(5,5), Point(6,5), Point(7,5), Point(9,5), Point(0,6), Point(1,6), Point(2,6), Point(3,6), Point(4,6), Point(5,6), Point(6,6), Point(7,6), Point(9,6))
+apple: Point(9,0)
+πList(Point(3,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2))
+apple: Point(5,0)
+©List(Point(3,0), Point(4,0), Point(5,0), Point(6,0), Point(7,0), Point(8,0), Point(9,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(6,1), Point(7,1), Point(8,1), Point(9,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2), Point(6,2), Point(7,2), Point(8,2), Point(9,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(6,3), Point(7,3), Point(8,3), Point(9,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(4,4), Point(5,4), Point(6,4), Point(7,4), Point(8,4), Point(9,4), Point(0,5), Point(1,5), Point(2,5), Point(3,5), Point(4,5), Point(5,5), Point(6,5), Point(7,5), Point(8,5), Point(9,5), Point(0,6), Point(1,6), Point(2,6), Point(3,6), Point(4,6), Point(5,6), Point(6,6), Point(7,6), Point(8,6), Point(9,6))
+apple: Point(5,0)
+πList(Point(0,0), Point(1,0), Point(2,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2))
+apple: Point(2,0)
+ùList(Point(0,0), Point(1,0), Point(6,0), Point(7,0), Point(8,0), Point(9,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(6,1), Point(7,1), Point(8,1), Point(9,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2), Point(6,2), Point(7,2), Point(8,2), Point(9,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(6,3), Point(7,3), Point(8,3), Point(9,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(4,4), Point(5,4), Point(6,4), Point(7,4), Point(8,4), Point(9,4), Point(0,5), Point(1,5), Point(2,5), Point(3,5), Point(4,5), Point(5,5), Point(6,5), Point(7,5), Point(8,5), Point(9,5), Point(0,6), Point(1,6), Point(2,6), Point(3,6), Point(4,6), Point(5,6), Point(6,6), Point(7,6), Point(8,6), Point(9,6))
+apple: Point(6,0)
+ëList(Point(3,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(4,4), Point(5,4), Point(0,5), Point(1,5), Point(2,5), Point(3,5), Point(4,5), Point(5,5))
+apple: Point(5,0)
+©List(Point(3,0), Point(4,0), Point(5,0), Point(6,0), Point(7,0), Point(8,0), Point(9,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(6,1), Point(7,1), Point(8,1), Point(9,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2), Point(6,2), Point(7,2), Point(8,2), Point(9,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(6,3), Point(7,3), Point(8,3), Point(9,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(4,4), Point(5,4), Point(6,4), Point(7,4), Point(8,4), Point(9,4), Point(0,5), Point(1,5), Point(2,5), Point(3,5), Point(4,5), Point(5,5), Point(6,5), Point(7,5), Point(8,5), Point(9,5), Point(0,6), Point(1,6), Point(2,6), Point(3,6), Point(4,6), Point(5,6), Point(6,6), Point(7,6), Point(8,6), Point(9,6))
+apple: Point(5,0)
+ëList(Point(0,0), Point(1,0), Point(2,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(4,4), Point(5,4), Point(0,5), Point(1,5), Point(2,5), Point(3,5), Point(4,5), Point(5,5))
+apple: Point(2,0)
+ùList(Point(0,0), Point(1,0), Point(6,0), Point(7,0), Point(8,0), Point(9,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(6,1), Point(7,1), Point(8,1), Point(9,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2), Point(6,2), Point(7,2), Point(8,2), Point(9,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(6,3), Point(7,3), Point(8,3), Point(9,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(4,4), Point(5,4), Point(6,4), Point(7,4), Point(8,4), Point(9,4), Point(0,5), Point(1,5), Point(2,5), Point(3,5), Point(4,5), Point(5,5), Point(6,5), Point(7,5), Point(8,5), Point(9,5), Point(0,6), Point(1,6), Point(2,6), Point(3,6), Point(4,6), Point(5,6), Point(6,6), Point(7,6), Point(8,6), Point(9,6))
+apple: Point(6,0)
+πList(Point(3,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2))
+apple: Point(5,0)
+ëList(Point(3,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(4,4), Point(5,4), Point(0,5), Point(1,5), Point(2,5), Point(3,5), Point(4,5), Point(5,5))
+apple: Point(5,0)
+πList(Point(0,0), Point(1,0), Point(2,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2))
+apple: Point(2,0)
+ÖList(Point(0,0), Point(1,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1), Point(0,2), Point(1,2), Point(2,2), Point(3,2), Point(4,2), Point(5,2), Point(0,3), Point(1,3), Point(2,3), Point(3,3), Point(4,3), Point(5,3), Point(0,4), Point(1,4), Point(2,4), Point(3,4), Point(4,4), Point(5,4), Point(0,5), Point(1,5), Point(2,5), Point(3,5), Point(4,5), Point(5,5))
+apple: Point(0,1)
+! AList(Point(3,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1))
+! apple: Point(1,1)
+" You got 23/26 points!
+" 1Your grade for the repls exercise will be : 8,85
