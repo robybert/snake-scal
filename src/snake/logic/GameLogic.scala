@@ -11,36 +11,37 @@ import snake.logic.GameLogic._
 class GameLogic(val random: RandomGenerator,
                 val gridDims : Dimensions) {
   val state = GameState(gridDims, Point(1,1), Point(2, 0), List(Point(1, 0), Point(0, 0)), this)
-  GameLogic.gameOver = false
-  GameLogic.switch = true
-  GameLogic.growCount = 0
-  GameLogic.currDirection = East()
-  GameLogic.lastDirection = East()
+  var gameOverBool : Boolean = false
+  var switch = true
+  var growCount = 0
+  var currDirection : Direction = East()
+  var lastDirection : Direction = East()
+  spots : List[Point]
 
   def gameOver: Boolean = {
-    if(GameLogic.gameOver) true
+    if(gameOverBool) true//TODO fix
     else false
   }
 
   def step(): Unit = {
     state.moveSnake()
-    GameLogic.lastDirection = GameLogic.currDirection
-    GameLogic.switch = true
+    lastDirection = currDirection
+    switch = true
   }
 
   def setReverse(r: Boolean): Unit = ()
 
   def changeDir(d: Direction): Unit = {
-    if(GameLogic.switch) {
-      GameLogic.lastDirection = GameLogic.currDirection
-      if (d.opposite != GameLogic.lastDirection) {
+    if(switch) {
+      lastDirection = currDirection
+      if (d.opposite != lastDirection) {
         d match {
-          case North() => GameLogic.currDirection = North()
-          case East() => GameLogic.currDirection = East()
-          case South() => GameLogic.currDirection = South()
-          case West() => GameLogic.currDirection = West()
+          case North() => currDirection = North()
+          case East() => currDirection = East()
+          case South() => currDirection = South()
+          case West() => currDirection = West()
         }
-        GameLogic.switch = false
+        switch = false
       }
     }
   }
@@ -57,7 +58,7 @@ case class GameState (
   placeApple()
 
   def cellTypeAt(p : Point) : CellType = {
-    if(isHead(p)) SnakeHead(GameLogic.currDirection)
+    if(isHead(p)) SnakeHead(logic.currDirection)
     else if(isBody(p)) SnakeBody(1)
     else if(isApple(p)) Apple()
     else Empty()
@@ -73,57 +74,55 @@ case class GameState (
     else Point(p.x + x, p.y + y)
   }
   def moveSnake() : Unit = {
-    if(GameLogic.currDirection == North()) head = movePoint(head, 0, -1)
-    else if(GameLogic.currDirection == East()) head = movePoint(head, 1, 0)
-    else if(GameLogic.currDirection == South()) head = movePoint(head, 0 , 1)
+    if(logic.currDirection == North()) head = movePoint(head, 0, -1)
+    else if(logic.currDirection == East()) head = movePoint(head, 1, 0)
+    else if(logic.currDirection == South()) head = movePoint(head, 0 , 1)
     else head = movePoint(head, -1, 0)
-    moveBody(GameLogic.currDirection)
+    moveBody(logic.currDirection)
   }
 
   private def placeApple() : Unit = {
     for (y <- 0 until dims.height; x <- 0 until dims.width) {
-      if (!(body contains Point(x, y)) && head != Point(x, y)) GameLogic.spots = GameLogic.spots :+ Point(x, y)
+      if (!(body contains Point(x, y)) && head != Point(x, y)) spots = spots :+ Point(x, y)
     }
     if(spots.length > 0) {
-      println(GameLogic.spots)
-      apple = GameLogic.spots(logic.random.randomInt(GameLogic.spots.length))
-      println("apple: " + apple)
-      GameLogic.spots = List[Point]()
+      apple = spots(logic.random.randomInt(spots.length))
+      spots = List[Point]()
     }
   }
 
-  private def moveBody(d : Direction) : Unit = {
+  private def moveBody(d : Direction) : Unit = {//TODO update name
     if(d == North()) {
-      if(GameLogic.lastDirection == East()) body = movePoint(body.head, 1, 0) +: body
-      else if(GameLogic.lastDirection == West()) body = movePoint(body.head, -1, 0) +: body
+      if(logic.lastDirection == East()) body = movePoint(body.head, 1, 0) +: body
+      else if(logic.lastDirection == West()) body = movePoint(body.head, -1, 0) +: body
       else body = movePoint(body.head, 0, -1) +: body
 
     }
     else if(d == East()) {
-      if(GameLogic.lastDirection == North()) body = movePoint(body.head, 0, -1) +: body
-      else if(GameLogic.lastDirection == South()) body = movePoint(body.head, 0, 1) +: body
+      if(logic.lastDirection == North()) body = movePoint(body.head, 0, -1) +: body
+      else if(logic.lastDirection == South()) body = movePoint(body.head, 0, 1) +: body
       else body = movePoint(body.head, 1, 0) +: body
     }
     else if(d == South()) {
-      if(GameLogic.lastDirection == East()) body = movePoint(body.head, 1, 0) +: body
-      else if(GameLogic.lastDirection == West()) body = movePoint(body.head, -1, 0) +: body
+      if(logic.lastDirection == East()) body = movePoint(body.head, 1, 0) +: body
+      else if(logic.lastDirection == West()) body = movePoint(body.head, -1, 0) +: body
       else body = movePoint(body.head, 0,1) +: body
     }
     else {
-      if(GameLogic.lastDirection == North()) body = movePoint(body.head, 0, -1) +: body
-      else if(GameLogic.lastDirection == South()) body = movePoint(body.head, 0, 1) +: body
+      if(logic.lastDirection == North()) body = movePoint(body.head, 0, -1) +: body
+      else if(logic.lastDirection == South()) body = movePoint(body.head, 0, 1) +: body
       else body = movePoint(body.head, -1, 0) +: body
     }
-    if(body.init.contains(head) && GameLogic.growCount == 0) GameLogic.gameOver = true
-    else if(body.contains(head) && GameLogic.growCount != 0) GameLogic.gameOver = true
-    else if(head != apple && GameLogic.growCount == 0) body = body.dropRight(1)
+    if(body.init.contains(head) && logic.growCount == 0) logic.gameOverBool = true
+    else if(body.contains(head) && logic.growCount != 0) logic.gameOverBool = true
+    else if(head != apple && logic.growCount == 0) body = body.dropRight(1)
     else if(head == apple) {
-      if(growCount == 0) body = body.dropRight(1)
-      else growCount -= 1
-      GameLogic.growCount += 3
+      if(logic.growCount == 0) body = body.dropRight(1)
+      else logic.growCount -= 1
+      logic.growCount += 3
       placeApple()
     }
-    else GameLogic.growCount -= 1
+    else logic.growCount -= 1
   }
 
 }
@@ -135,12 +134,12 @@ object GameLogic {
 
   val DrawSizeFactor = 2.0 // increase this to make the game bigger (for high-res screens)
   // or decrease to make game smaller
-  var currDirection : Direction = East()
-  var lastDirection : Direction = East()
-  var growCount : Int  = 0
-  var gameOver : Boolean = false
-  var switch : Boolean = true
-  var spots : List[Point] = List[Point]()
+//  var currDirection : Direction = East()
+//  var lastDirection : Direction = East()
+//  var growCount : Int  = 0
+//  var gameOver : Boolean = false
+//  var switch : Boolean = true
+    var spots : List[Point] = List[Point]()
 
     // These are the dimensions used when playing the game.
   // When testing the game, other dimensions are passed to

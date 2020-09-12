@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="snake.basic.PlacementTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-09-11T15:21:48" hostname="JARVIS" time="0.062">
+<testsuite name="snake.basic.PlacementTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-09-12T10:14:38" hostname="JARVIS" time="0.083">
   <properties/>
-  <testcase name="testStartCorrectly" classname="snake.basic.PlacementTests" time="0.052"/>
+  <testcase name="testStartCorrectly" classname="snake.basic.PlacementTests" time="0.062"/>
   <testcase name="testApplePos3" classname="snake.basic.PlacementTests" time="0.002"/>
-  <testcase name="testApplePos8" classname="snake.basic.PlacementTests" time="0.001"/>
-  <testcase name="testNoRoomForApple" classname="snake.basic.PlacementTests" time="0.005"/>
-  <system-out><![CDATA[List(Point(3,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1))
-apple: Point(3,0)
-List(Point(3,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1))
-apple: Point(3,0)
-List(Point(3,0), Point(4,0), Point(5,0), Point(0,1), Point(1,1), Point(2,1), Point(3,1), Point(4,1), Point(5,1))
-apple: Point(5,1)
-List(Point(3,0), Point(4,0), Point(5,0))
-apple: Point(5,0)
-List(Point(0,0), Point(1,0), Point(2,0))
-apple: Point(2,0)
-]]></system-out>
+  <testcase name="testApplePos8" classname="snake.basic.PlacementTests" time="0.002"/>
+  <testcase name="testNoRoomForApple" classname="snake.basic.PlacementTests" time="0.016"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
