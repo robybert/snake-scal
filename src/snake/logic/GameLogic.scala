@@ -10,7 +10,7 @@ import snake.logic.GameLogic._
  */
 class GameLogic(val random: RandomGenerator,
                 val gridDims : Dimensions) {
-  val state = GameState(gridDims, Point(1,1), Point(2, 0), List(Point(1, 0), Point(0, 0)), this)
+  var state = GameState(gridDims, , Point(2, 0), List(Point(1, 0), Point(0, 0)), this)
   var gameOverBool : Boolean = false
   var switch = true
   var growCount = 0
@@ -19,12 +19,12 @@ class GameLogic(val random: RandomGenerator,
   spots : List[Point]
 
   def gameOver: Boolean = {
-    if(gameOverBool) true//TODO fix
-    else false
+    if(state.body contains state.head) gameOverBool = true
+    return gameOverBool
   }
 
   def step(): Unit = {
-    state.moveSnake()
+    state = state.moveSnake()
     lastDirection = currDirection
     switch = true
   }
@@ -50,16 +50,16 @@ class GameLogic(val random: RandomGenerator,
 }
 
 case class GameState (
-  val dims : Dimensions,
-  var apple : Point,
-  var head : Point,
-  var body : List[Point],
+  dims : Dimensions,
+  apple : Point,
+  head : Point,
+  body : List[Point],
   logic: GameLogic){
   placeApple()
 
   def cellTypeAt(p : Point) : CellType = {
     if(isHead(p)) SnakeHead(logic.currDirection)
-    else if(isBody(p)) SnakeBody(1)
+    else if(isBody(p)) SnakeBody(1)//TODO fix float value
     else if(isApple(p)) Apple()
     else Empty()
   }
@@ -73,56 +73,65 @@ case class GameState (
     else if((p.y + y) >= dims.height) Point(p.x, 0)
     else Point(p.x + x, p.y + y)
   }
-  def moveSnake() : Unit = {
-    if(logic.currDirection == North()) head = movePoint(head, 0, -1)
-    else if(logic.currDirection == East()) head = movePoint(head, 1, 0)
-    else if(logic.currDirection == South()) head = movePoint(head, 0 , 1)
-    else head = movePoint(head, -1, 0)
-    moveBody(logic.currDirection)
+  def moveSnake() : GameState = {
+    val newHead = 
+      if(logic.currDirection == North()) movePoint(head, 0, -1)
+      else if(logic.currDirection == East()) movePoint(head, 1, 0)
+      else if(logic.currDirection == South()) movePoint(head, 0 , 1)
+      else movePoint(head, -1, 0)
+    val newBody = moveBody(logic.currDirection)
+    val newApple =
+      if(newHead == apple) placeApple()
+      else apple
+    return copy(apple = newApple, head = newHead, body = newBody)
   }
 
-  private def placeApple() : Unit = {
+  private def placeApple() : Point = {
     for (y <- 0 until dims.height; x <- 0 until dims.width) {
       if (!(body contains Point(x, y)) && head != Point(x, y)) spots = spots :+ Point(x, y)
     }
-    if(spots.length > 0) {
-      apple = spots(logic.random.randomInt(spots.length))
-      spots = List[Point]()
-    }
+    val placedApple =
+    if(spots.length > 0) spots(logic.random.randomInt(spots.length))
+    else null
+    spots = List[Point]()
+    return placedApple
+
   }
 
-  private def moveBody(d : Direction) : Unit = {//TODO update name
-    if(d == North()) {
-      if(logic.lastDirection == East()) body = movePoint(body.head, 1, 0) +: body
-      else if(logic.lastDirection == West()) body = movePoint(body.head, -1, 0) +: body
-      else body = movePoint(body.head, 0, -1) +: body
+  private def moveBody(d : Direction) : List[Point] = {//TODO update name
+    val newBody =
+      if(d == North()) {
+        if(logic.lastDirection == East()) movePoint(body.head, 1, 0) +: body
+        else if(logic.lastDirection == West()) movePoint(body.head, -1, 0) +: body
+        else movePoint(body.head, 0, -1) +: body
+  
+      }
+      else if(d == East()) {
+        if(logic.lastDirection == North()) movePoint(body.head, 0, -1) +: body
+        else if(logic.lastDirection == South()) movePoint(body.head, 0, 1) +: body
+        else movePoint(body.head, 1, 0) +: body
+      }
+      else if(d == South()) {
+        if(logic.lastDirection == East()) movePoint(body.head, 1, 0) +: body
+        else if(logic.lastDirection == West()) movePoint(body.head, -1, 0) +: body
+        else movePoint(body.head, 0,1) +: body
+      }
+      else {
+        if (logic.lastDirection == North()) movePoint(body.head, 0, -1) +: body
+        else if (logic.lastDirection == South()) movePoint(body.head, 0, 1) +: body
+        else movePoint(body.head, -1, 0) +: body
+      }
+    val finalBody =
+      if(logic.growCount == 0) body.dropRight(1)
+      else {
+        logic.growCount -= 1
+        newBody
+      }
 
-    }
-    else if(d == East()) {
-      if(logic.lastDirection == North()) body = movePoint(body.head, 0, -1) +: body
-      else if(logic.lastDirection == South()) body = movePoint(body.head, 0, 1) +: body
-      else body = movePoint(body.head, 1, 0) +: body
-    }
-    else if(d == South()) {
-      if(logic.lastDirection == East()) body = movePoint(body.head, 1, 0) +: body
-      else if(logic.lastDirection == West()) body = movePoint(body.head, -1, 0) +: body
-      else body = movePoint(body.head, 0,1) +: body
-    }
-    else {
-      if(logic.lastDirection == North()) body = movePoint(body.head, 0, -1) +: body
-      else if(logic.lastDirection == South()) body = movePoint(body.head, 0, 1) +: body
-      else body = movePoint(body.head, -1, 0) +: body
-    }
-    if(body.init.contains(head) && logic.growCount == 0) logic.gameOverBool = true
-    else if(body.contains(head) && logic.growCount != 0) logic.gameOverBool = true
-    else if(head != apple && logic.growCount == 0) body = body.dropRight(1)
-    else if(head == apple) {
-      if(logic.growCount == 0) body = body.dropRight(1)
-      else logic.growCount -= 1
+    if(head == apple) {
       logic.growCount += 3
-      placeApple()
     }
-    else logic.growCount -= 1
+    return finalBody
   }
 
 }

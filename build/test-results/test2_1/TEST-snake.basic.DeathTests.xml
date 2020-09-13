@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="snake.basic.DeathTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-09-12T10:14:38" hostname="JARVIS" time="0.013">
-  <properties/>
-  <testcase name="testGameOver" classname="snake.basic.DeathTests" time="0.004"/>
-  <testcase name="testPreciselyDoesNotDie" classname="snake.basic.DeathTests" time="0.005"/>
-  <testcase name="testNoEscapeGameOver" classname="snake.basic.DeathTests" time="0.004"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
