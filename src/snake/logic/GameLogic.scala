@@ -10,13 +10,12 @@ import snake.logic.GameLogic._
  */
 class GameLogic(val random: RandomGenerator,
                 val gridDims : Dimensions) {
-  var state = GameState(gridDims, placeFirstApple(), Point(2, 0), List(Point(1, 0), Point(0, 0)), this)
+  var state = GameState(gridDims, placeApple(gridDims, List(Point(1, 0), Point(0, 0)), Point(2, 0), this), Point(2, 0), List(Point(1, 0), Point(0, 0)), this)
   var gameOverBool : Boolean = false
   var switch = true
   var growCount = 0
   var currDirection : Direction = East()
   var lastDirection : Direction = East()
-  spots : List[Point]
 
   def gameOver: Boolean = {
     if(state.body contains state.head) gameOverBool = true
@@ -27,17 +26,6 @@ class GameLogic(val random: RandomGenerator,
     state = state.moveSnake()
     lastDirection = currDirection
     switch = true
-  }
-
-  def placeFirstApple() : Point = {
-    for (y <- 0 until gridDims.height; x <- 0 until gridDims.width) {
-      if (!(List(Point(1, 0), Point(0, 0)) contains Point(x, y)) && Point(2, 0) != Point(x, y)) spots = spots :+ Point(x, y)
-    }
-    val placedApple =
-      if(spots.length > 0) spots(random.randomInt(spots.length))
-      else null
-    spots = List[Point]()
-    return placedApple
   }
 
   def setReverse(r: Boolean): Unit = ()
@@ -66,7 +54,6 @@ case class GameState (
   head : Point,
   body : List[Point],
   logic: GameLogic){
-
   def cellTypeAt(p : Point) : CellType = {
     if(isHead(p)) SnakeHead(logic.currDirection)
     else if(isBody(p)) SnakeBody(1)//TODO fix float value
@@ -91,21 +78,9 @@ case class GameState (
       else movePoint(head, -1, 0)
     val newBody = moveBody(newHead)
     val newApple =
-      if(newHead == apple) placeApple(newBody, newHead)
+      if(newHead == apple) placeApple(dims, newBody, newHead, logic)
       else apple
     return copy(apple = newApple, head = newHead, body = newBody)
-  }
-
-  private def placeApple(body : List[Point], head : Point) : Point = {
-    for (y <- 0 until dims.height; x <- 0 until dims.width) {
-      if (!(body contains Point(x, y)) && head != Point(x, y)) spots = spots :+ Point(x, y)
-    }
-    val placedApple =
-      if(spots.length > 0) spots(logic.random.randomInt(spots.length))
-      else null
-    spots = List[Point]()
-    return placedApple
-
   }
 
   private def moveBody(newHead : Point) : List[Point] = {
@@ -122,7 +97,6 @@ case class GameState (
     }
     return finalBody
   }
-
 }
 
 /** GameLogic companion object */
@@ -133,6 +107,17 @@ object GameLogic {
   val DrawSizeFactor = 2.0 // increase this to make the game bigger (for high-res screens)
   // or decrease to make game smaller
     var spots : List[Point] = List[Point]()
+
+  def placeApple(dims : Dimensions, body : List[Point], head : Point, logic : GameLogic) : Point = {
+    for (y <- 0 until dims.height; x <- 0 until dims.width) {
+      if (!(body contains Point(x, y)) && head != Point(x, y)) spots = spots :+ Point(x, y)
+    }
+    val placedApple =
+      if(spots.length > 0) spots(logic.random.randomInt(spots.length))
+      else null
+    spots = List[Point]()
+    return placedApple
+  }
 
     // These are the dimensions used when playing the game.
   // When testing the game, other dimensions are passed to
