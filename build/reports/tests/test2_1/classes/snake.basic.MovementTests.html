@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class snake.basic.MovementTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class snake.basic.MovementTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/snake.basic.html">snake.basic</a> &gt; MovementTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">5</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">5</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.035s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="testChangeDirs"></a>
+<h3 class="failures">testChangeDirs</h3>
+<span class="code">
+<pre>org.scalatest.exceptions.TestFailedException: didPass was false
+Hint: You can change direction.
+--------------------------------------------------------------------------------
+This is what went wrong:
+
+step=0, rand=2, actions=&lt;&gt;
+Want | Got ✓
+------------
+OO&gt;. | OO&gt;. 
+.A.. | .A.. 
+.... | .... 
+.... | .... 
+
+step=1, rand=2, actions=&lt;ChangeDir(South()), Step&gt;
+Want | Got ✗
+------------
+.OO. | .O.. 
+.Av. | .Av. 
+.... | .... 
+.... | .... 
+
+step=2, rand=2, actions=&lt;Step&gt;
+Want | Got ✗
+------------
+..O. | .... 
+.AO. | .A.. 
+..v. | ..v. 
+.... | .... 
+
+step=3, rand=2, actions=&lt;ChangeDir(West()), Step&gt;
+Want | Got ✗                                                                                                                                           
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+.... | LogicFailed(java.util.NoSuchElementException: head of empty list                                                                                
+.AO. | 	at scala.collection.immutable.Nil$.head(List.scala:592)                                                                                        
+.&lt;O. | 	at scala.collection.immutable.Nil$.head(List.scala:591)                                                                                        
+.... | 	at snake.logic.GameState.moveBody(GameLogic.scala:132)                                                                                         
+     | 	at snake.logic.GameState.moveSnake(GameLogic.scala:93)                                                                                         
+     | 	at snake.logic.GameLogic.step(GameLogic.scala:27)                                                                                              
+     | 	at snake.SnakeLogicWrapper.performAction(SnakeTestSuiteBase.scala:51)                                                                          
+     | 	at snake.SnakeLogicWrapper.performAction(SnakeTestSuiteBase.scala:46)                                                                          
+     | 	at generic.GameTestSuite.$anonfun$performActionsAndGetDisplay$1(GameTestSuite.scala:150)                                                       
+     | 	at generic.GameTestSuite.$anonfun$performActionsAndGetDisplay$1$adapted(GameTestSuite.scala:150)                                               
+     | 	at scala.collection.immutable.List.foreach(List.scala:305)                                                                                     
+     | 	at generic.GameTestSuite.performActionsAndGetDisplay(GameTestSuite.scala:150)                                                                  
+     | 	at generic.GameTestSuite$TestRecording.$anonfun$implementationDisplays$2(GameTestSuite.scala:197)                                              
+     | 	at generic.GameTestSuite$TestRecording.catchLogicError$1(GameTestSuite.scala:182)                                                              
+     | 	at generic.GameTestSuite$TestRecording.liftedTree1$1(GameTestSuite.scala:197)                                                                  
+     | 	at generic.GameTestSuite$TestRecording.implementationDisplays$lzycompute(GameTestSuite.scala:187)                                              
+     | 	at generic.GameTestSuite$TestRecording.implementationDisplays(GameTestSuite.scala:178)                                                         
+     | 	at generic.GameTestSuite$TestRecording.passes$lzycompute(GameTestSuite.scala:208)                                                              
+     | 	at generic.GameTestSuite$TestRecording.passes(GameTestSuite.scala:207)                                                                         
+     | 	at generic.GameTestSuite.checkGame(GameTestSuite.scala:290)                                                                                    
+     | 	at snake.SnakeTestSuiteBase.checkGame(SnakeTestSuiteBase.scala:102)                                                                            
+     | 	at snake.basic.MovementTests.$anonfun$new$2(MovementTests.scala:73)                                                                            
+     | 	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)                                                                     
+     | 	at infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)                                                                                  
+     | 	at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)                                                                                       
+     | 	at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)                                                                                      
+     | 	at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)                                                                                     
+     | 	at org.scalatest.Transformer.apply(Transformer.scala:22)                                                                                       
+     | 	at org.scalatest.Transformer.apply(Transformer.scala:20)                                                                                       
+     | 	at org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)                                                                            
+     | 	at org.scalatest.TestSuite.withFixture(TestSuite.scala:196)                                                                                    
+     | 	at org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)                                                                                   
+     | 	at infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)                                      
+     | 	at org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)                                                
+     | 	at org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)                                                                          
+     | 	at org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)                                                                     
+     | 	at org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)                                                                    
+     | 	at org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)                                                                    
+     | 	at org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)                                                           
+     | 	at org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)                                                          
+     | 	at infrastructure.TestBase.withFixture(TestBase.scala:9)                                                                                       
+     | 	at org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)                                                                      
+     | 	at org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)                                                                       
+     | 	at org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)                                                                                     
+     | 	at org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)                                                                                  
+     | 	at org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)                                                                                 
+     | 	at org.scalatest.FunSuite.runTest(FunSuite.scala:1560)                                                                                         
+     | 	at org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)                                                                      
+     | 	at org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)                                                                     
+     | 	at scala.collection.immutable.List.foreach(List.scala:305)                                                                                     
+     | 	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)                                                                              
+     | 	at org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)                                                                                
+     | 	at org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)                                                                                    
+     | 	at org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)                                                                                 
+     | 	at org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)                                                                                
+     | 	at org.scalatest.FunSuite.runTests(FunSuite.scala:1560)                                                                                        
+     | 	at org.scalatest.Suite.run(Suite.scala:1124)                                                                                                   
+     | 	at org.scalatest.Suite.run$(Suite.scala:1106)                                                                                                  
+     | 	at org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)                                                           
+     | 	at org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)                                                                           
+     | 	at org.scalatest.SuperEngine.runImpl(Engine.scala:518)                                                                                         
+     | 	at org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)                                                                                      
+     | 	at org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)                                                                                     
+     | 	at infrastructure.TestBase.run(TestBase.scala:26)                                                                                              
+     | 	at org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)                                                                                  
+     | 	at org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)                                                                            
+     | 	at scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)                                                                           
+     | 	at org.scalatest.Suite.runNestedSuites(Suite.scala:1232)                                                                                       
+     | 	at org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)                                                                                      
+     | 	at org.scalatest.Suites.runNestedSuites(Suites.scala:56)                                                                                       
+     | 	at org.scalatest.Suite.run(Suite.scala:1121)                                                                                                   
+     | 	at org.scalatest.Suite.run$(Suite.scala:1106)                                                                                                  
+     | 	at snake.SnakeTestSuite.runDirect(SnakeTestSuite.scala:24)                                                                                     
+     | 	at snake.SnakeTestSuite.run(SnakeTestSuite.scala:16)                                                                                           
+     | 	at org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)                                                                               
+     | 	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)                            
+     | 	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)                                  
+     | 	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)                                  
+     | 	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)       
+     | 	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)                             
+     | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)                                                                                 
+     | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)                                                               
+     | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)                                                       
+     | 	at java.lang.reflect.Method.invoke(Method.java:498)                                                                                            
+     | 	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)                                                        
+     | 	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)                                                        
+     | 	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)                                        
+     | 	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)                         
+     | 	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)                                                                                      
+     | 	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)                                               
+     | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)                                                                                 
+     | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)                                                               
+     | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)                                                       
+     | 	at java.lang.reflect.Method.invoke(Method.java:498)                                                                                            
+     | 	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)                                                        
+     | 	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)                                                        
+     | 	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
+     | 	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
+     | 	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)                                                         
+     | 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)                                      
+     | 	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)                                                       
+     | 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)                                                             
+     | 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)                                                             
+     | 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)                                       
+     | 	at java.lang.Thread.run(Thread.java:748)                                                                                                       
+     | )                                                                                                                                               
+
+
+	at org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
+	at org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
+	at org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
+	at org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
+	at generic.GameTestSuite.checkGame(GameTestSuite.scala:298)
+	at snake.SnakeTestSuiteBase.checkGame(SnakeTestSuiteBase.scala:102)
+	at snake.basic.MovementTests.$anonfun$new$2(MovementTests.scala:73)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
+	at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+	at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
+	at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at org.scalatest.Transformer.apply(Transformer.scala:22)
+	at org.scalatest.Transformer.apply(Transformer.scala:20)
+	at org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
+	at org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
+	at org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
+	at infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
+	at org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
+	at org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
+	at org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
+	at org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
+	at org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
+	at org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
+	at org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
+	at infrastructure.TestBase.withFixture(TestBase.scala:9)
+	at org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
+	at org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
+	at org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
+	at org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
+	at org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
+	at org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
+	at org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
+	at scala.collection.immutable.List.foreach(List.scala:305)
+	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
+	at org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
+	at org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
+	at org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
+	at org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
+	at org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
+	at org.scalatest.Suite.run(Suite.scala:1124)
+	at org.scalatest.Suite.run$(Suite.scala:1106)
+	at org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
+	at org.scalatest.SuperEngine.runImpl(Engine.scala:518)
+	at org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
+	at org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
+	at infrastructure.TestBase.run(TestBase.scala:26)
+	at org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
+	at org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
+	at scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
+	at org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
+	at org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
+	at org.scalatest.Suites.runNestedSuites(Suites.scala:56)
+	at org.scalatest.Suite.run(Suite.scala:1121)
+	at org.scalatest.Suite.run$(Suite.scala:1106)
+	at snake.SnakeTestSuite.runDirect(SnakeTestSuite.scala:24)
+	at snake.SnakeTestSuite.run(SnakeTestSuite.scala:16)
+	at org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.lang.Thread.run(Thread.java:748)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="testIgnoreEatHead"></a>
+<h3 class="failures">testIgnoreEatHead</h3>
+<span class="code">
+<pre>org.scalatest.exceptions.TestFailedException: didPass was false
+Hint: It should not be possible to “crash into yourself”: If the snake is currently traveling
+eastwards, it should not be possible to change the current direction to west (and then die in the
+next step). This generalizes to other directions.
+--------------------------------------------------------------------------------
+This is what went wrong:
+
+step=0, rand=5, actions=&lt;&gt;
+Want   | Got ✓ 
+---------------
+OO&gt;... | OO&gt;...
+..A... | ..A...
+
+step=1, rand=5, actions=&lt;ChangeDir(West()), Step&gt;
+Want   | Got ✗ 
+---------------
+.OO&gt;.. | .O.&gt;..
+..A... | ..A...
+
+step=2, rand=5, actions=&lt;ChangeDir(West()), Step&gt;
+Want   | Got ✗ 
+---------------
+..OO&gt;. | ....&gt;.
+..A... | ..A...
+
+
+	at org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
+	at org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
+	at org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
+	at org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
+	at generic.GameTestSuite.checkGame(GameTestSuite.scala:298)
+	at snake.SnakeTestSuiteBase.checkGame(SnakeTestSuiteBase.scala:102)
+	at snake.basic.MovementTests.$anonfun$new$3(MovementTests.scala:90)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
+	at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+	at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
+	at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at org.scalatest.Transformer.apply(Transformer.scala:22)
+	at org.scalatest.Transformer.apply(Transformer.scala:20)
+	at org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
+	at org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
+	at org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
+	at infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
+	at org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
+	at org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
+	at org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
+	at org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
+	at org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
+	at org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
+	at org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
+	at infrastructure.TestBase.withFixture(TestBase.scala:9)
+	at org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
+	at org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
+	at org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
+	at org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
+	at org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
+	at org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
+	at org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
+	at scala.collection.immutable.List.foreach(List.scala:305)
+	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
+	at org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
+	at org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
+	at org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
+	at org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
+	at org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
+	at org.scalatest.Suite.run(Suite.scala:1124)
+	at org.scalatest.Suite.run$(Suite.scala:1106)
+	at org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
+	at org.scalatest.SuperEngine.runImpl(Engine.scala:518)
+	at org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
+	at org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
+	at infrastructure.TestBase.run(TestBase.scala:26)
+	at org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
+	at org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
+	at scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
+	at org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
+	at org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
+	at org.scalatest.Suites.runNestedSuites(Suites.scala:56)
+	at org.scalatest.Suite.run(Suite.scala:1121)
+	at org.scalatest.Suite.run$(Suite.scala:1106)
+	at snake.SnakeTestSuite.runDirect(SnakeTestSuite.scala:24)
+	at snake.SnakeTestSuite.run(SnakeTestSuite.scala:16)
+	at org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.lang.Thread.run(Thread.java:748)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="testMove"></a>
+<h3 class="failures">testMove</h3>
+<span class="code">
+<pre>org.scalatest.exceptions.TestFailedException: didPass was false
+Hint: When moving the snake is extended from the head in the current direction (and he snake is
+shortened from the tail if it is not currently growing).
+--------------------------------------------------------------------------------
+This is what went wrong:
+
+step=0, rand=3, actions=&lt;&gt;
+Want   | Got ✓ 
+---------------
+OO&gt;... | OO&gt;...
+A..... | A.....
+
+step=1, rand=3, actions=&lt;Step&gt;
+Want   | Got ✗ 
+---------------
+.OO&gt;.. | .O.&gt;..
+A..... | A.....
+
+step=2, rand=3, actions=&lt;Step&gt;
+Want   | Got ✗ 
+---------------
+..OO&gt;. | ....&gt;.
+A..... | A.....
+
+
+	at org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
+	at org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
+	at org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
+	at org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
+	at generic.GameTestSuite.checkGame(GameTestSuite.scala:298)
+	at snake.SnakeTestSuiteBase.checkGame(SnakeTestSuiteBase.scala:102)
+	at snake.basic.MovementTests.$anonfun$new$1(MovementTests.scala:20)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
+	at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+	at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
+	at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at org.scalatest.Transformer.apply(Transformer.scala:22)
+	at org.scalatest.Transformer.apply(Transformer.scala:20)
+	at org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
+	at org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
+	at org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
+	at infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
+	at org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
+	at org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
+	at org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
+	at org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
+	at org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
+	at org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
+	at org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
+	at infrastructure.TestBase.withFixture(TestBase.scala:9)
+	at org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
+	at org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
+	at org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
+	at org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
+	at org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
+	at org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
+	at org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
+	at scala.collection.immutable.List.foreach(List.scala:305)
+	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
+	at org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
+	at org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
+	at org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
+	at org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
+	at org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
+	at org.scalatest.Suite.run(Suite.scala:1124)
+	at org.scalatest.Suite.run$(Suite.scala:1106)
+	at org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
+	at org.scalatest.SuperEngine.runImpl(Engine.scala:518)
+	at org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
+	at org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
+	at infrastructure.TestBase.run(TestBase.scala:26)
+	at org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
+	at org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
+	at scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
+	at org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
+	at org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
+	at org.scalatest.Suites.runNestedSuites(Suites.scala:56)
+	at org.scalatest.Suite.run(Suite.scala:1121)
+	at org.scalatest.Suite.run$(Suite.scala:1106)
+	at snake.SnakeTestSuite.runDirect(SnakeTestSuite.scala:24)
+	at snake.SnakeTestSuite.run(SnakeTestSuite.scala:16)
+	at org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.lang.Thread.run(Thread.java:748)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="testQuickSwitch"></a>
+<h3 class="failures">testQuickSwitch</h3>
+<span class="code">
+<pre>org.scalatest.exceptions.TestFailedException: didPass was false
+Hint: It should not be possible to crash into yourself by changing the direction multiple times
+before the next step. For example, if the snake came from the west, and the we changed the current
+direction to north, it still should not be possible to change the direction to to west before
+taking a step.
+--------------------------------------------------------------------------------
+This is what went wrong:
+
+step=0, rand=4, actions=&lt;&gt;
+Want | Got ✓
+------------
+OO&gt;. | OO&gt;. 
+...A | ...A 
+.... | .... 
+
+step=1, rand=4, actions=&lt;Step&gt;
+Want | Got ✗
+------------
+.OO&gt; | .O.&gt; 
+...A | ...A 
+.... | .... 
+
+step=2, rand=4, actions=&lt;ChangeDir(North()), ChangeDir(West()), Step&gt;
+Want | Got ✗
+------------
+..OO | .... 
+...A | ...A 
+...^ | ...^ 
+
+
+	at org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
+	at org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
+	at org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
+	at org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
+	at generic.GameTestSuite.checkGame(GameTestSuite.scala:298)
+	at snake.SnakeTestSuiteBase.checkGame(SnakeTestSuiteBase.scala:102)
+	at snake.basic.MovementTests.$anonfun$new$4(MovementTests.scala:111)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
+	at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+	at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
+	at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at org.scalatest.Transformer.apply(Transformer.scala:22)
+	at org.scalatest.Transformer.apply(Transformer.scala:20)
+	at org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
+	at org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
+	at org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
+	at infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
+	at org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
+	at org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
+	at org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
+	at org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
+	at org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
+	at org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
+	at org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
+	at infrastructure.TestBase.withFixture(TestBase.scala:9)
+	at org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
+	at org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
+	at org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
+	at org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
+	at org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
+	at org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
+	at org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
+	at scala.collection.immutable.List.foreach(List.scala:305)
+	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
+	at org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
+	at org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
+	at org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
+	at org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
+	at org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
+	at org.scalatest.Suite.run(Suite.scala:1124)
+	at org.scalatest.Suite.run$(Suite.scala:1106)
+	at org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
+	at org.scalatest.SuperEngine.runImpl(Engine.scala:518)
+	at org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
+	at org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
+	at infrastructure.TestBase.run(TestBase.scala:26)
+	at org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
+	at org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
+	at scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
+	at org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
+	at org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
+	at org.scalatest.Suites.runNestedSuites(Suites.scala:56)
+	at org.scalatest.Suite.run(Suite.scala:1121)
+	at org.scalatest.Suite.run$(Suite.scala:1106)
+	at snake.SnakeTestSuite.runDirect(SnakeTestSuite.scala:24)
+	at snake.SnakeTestSuite.run(SnakeTestSuite.scala:16)
+	at org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.lang.Thread.run(Thread.java:748)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="testQuickSwitch2"></a>
+<h3 class="failures">testQuickSwitch2</h3>
+<span class="code">
+<pre>org.scalatest.exceptions.TestFailedException: didPass was false
+Hint: To prevent crashing into yourself, you should not just pick the first change of
+direction.Instead, you should take the last valid change of direction (i.e. not a change in the
+direction wherethe snake came from
+--------------------------------------------------------------------------------
+This is what went wrong:
+
+step=0, rand=4, actions=&lt;&gt;
+Want | Got ✓
+------------
+OO&gt;. | OO&gt;. 
+...A | ...A 
+.... | .... 
+
+step=1, rand=4, actions=&lt;Step&gt;
+Want | Got ✗
+------------
+.OO&gt; | .O.&gt; 
+...A | ...A 
+.... | .... 
+
+step=2, rand=4, actions=&lt;ChangeDir(West()), ChangeDir(North()), Step&gt;
+Want | Got ✗
+------------
+..OO | .... 
+...A | ...A 
+...^ | ...^ 
+
+
+	at org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
+	at org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
+	at org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
+	at org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
+	at generic.GameTestSuite.checkGame(GameTestSuite.scala:298)
+	at snake.SnakeTestSuiteBase.checkGame(SnakeTestSuiteBase.scala:102)
+	at snake.basic.MovementTests.$anonfun$new$5(MovementTests.scala:132)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
+	at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+	at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
+	at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at org.scalatest.Transformer.apply(Transformer.scala:22)
+	at org.scalatest.Transformer.apply(Transformer.scala:20)
+	at org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
+	at org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
+	at org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
+	at infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
+	at org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
+	at org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
+	at org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
+	at org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
+	at org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
+	at org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
+	at org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
+	at infrastructure.TestBase.withFixture(TestBase.scala:9)
+	at org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
+	at org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
+	at org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
+	at org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
+	at org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
+	at org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
+	at org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
+	at scala.collection.immutable.List.foreach(List.scala:305)
+	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
+	at org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
+	at org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
+	at org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
+	at org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
+	at org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
+	at org.scalatest.Suite.run(Suite.scala:1124)
+	at org.scalatest.Suite.run$(Suite.scala:1106)
+	at org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
+	at org.scalatest.SuperEngine.runImpl(Engine.scala:518)
+	at org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
+	at org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
+	at infrastructure.TestBase.run(TestBase.scala:26)
+	at org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
+	at org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
+	at scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
+	at org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
+	at org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
+	at org.scalatest.Suites.runNestedSuites(Suites.scala:56)
+	at org.scalatest.Suite.run(Suite.scala:1121)
+	at org.scalatest.Suite.run$(Suite.scala:1106)
+	at snake.SnakeTestSuite.runDirect(SnakeTestSuite.scala:24)
+	at snake.SnakeTestSuite.run(SnakeTestSuite.scala:16)
+	at org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.lang.Thread.run(Thread.java:748)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="failures">testChangeDirs</td>
+<td class="failures">0.009s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">testIgnoreEatHead</td>
+<td class="failures">0.004s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">testMove</td>
+<td class="failures">0.004s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">testQuickSwitch</td>
+<td class="failures">0.006s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">testQuickSwitch2</td>
+<td class="failures">0.012s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 5.2.1</a> at 13-sep-2020 21:44:20</p>
+</div>
+</div>
+</body>
+</html>

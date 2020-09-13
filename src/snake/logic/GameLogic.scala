@@ -10,7 +10,7 @@ import snake.logic.GameLogic._
  */
 class GameLogic(val random: RandomGenerator,
                 val gridDims : Dimensions) {
-  var state = GameState(gridDims, , Point(2, 0), List(Point(1, 0), Point(0, 0)), this)
+  var state = GameState(gridDims, placeFirstApple(), Point(2, 0), List(Point(1, 0), Point(0, 0)), this)
   var gameOverBool : Boolean = false
   var switch = true
   var growCount = 0
@@ -27,6 +27,17 @@ class GameLogic(val random: RandomGenerator,
     state = state.moveSnake()
     lastDirection = currDirection
     switch = true
+  }
+
+  def placeFirstApple() : Point = {
+    for (y <- 0 until gridDims.height; x <- 0 until gridDims.width) {
+      if (!(List(Point(1, 0), Point(0, 0)) contains Point(x, y)) && Point(2, 0) != Point(x, y)) spots = spots :+ Point(x, y)
+    }
+    val placedApple =
+      if(spots.length > 0) spots(random.randomInt(spots.length))
+      else null
+    spots = List[Point]()
+    return placedApple
   }
 
   def setReverse(r: Boolean): Unit = ()
