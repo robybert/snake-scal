@@ -19,8 +19,8 @@ class GameLogic(val random: RandomGenerator,
   spots : List[Point]
 
   def gameOver: Boolean = {
-    if(gameOverBool) true//TODO fix
-    else false
+    if(state.body contains state.head) gameOverBool = true
+    return gameOverBool
   }
 
   def step(): Unit = {
