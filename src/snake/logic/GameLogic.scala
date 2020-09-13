@@ -101,14 +101,14 @@ case class GameState (
       if (!(body contains Point(x, y)) && head != Point(x, y)) spots = spots :+ Point(x, y)
     }
     val placedApple =
-    if(spots.length > 0) spots(logic.random.randomInt(spots.length))
-    else null
+      if(spots.length > 0) spots(logic.random.randomInt(spots.length))
+      else null
     spots = List[Point]()
     return placedApple
 
   }
 
-  private def moveBody(newHead : Point) : List[Point] = {//TODO update name
+  private def moveBody(newHead : Point) : List[Point] = {
     val newBody = head +: body
     val finalBody =
       if(logic.growCount == 0) newBody.dropRight(1)
