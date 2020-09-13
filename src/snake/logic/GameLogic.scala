@@ -66,7 +66,6 @@ case class GameState (
   head : Point,
   body : List[Point],
   logic: GameLogic){
-  placeApple()
 
   def cellTypeAt(p : Point) : CellType = {
     if(isHead(p)) SnakeHead(logic.currDirection)
@@ -90,14 +89,14 @@ case class GameState (
       else if(logic.currDirection == East()) movePoint(head, 1, 0)
       else if(logic.currDirection == South()) movePoint(head, 0 , 1)
       else movePoint(head, -1, 0)
-    val newBody = moveBody(logic.currDirection)
+    val newBody = moveBody(newHead)
     val newApple =
-      if(newHead == apple) placeApple()
+      if(newHead == apple) placeApple(newBody, newHead)
       else apple
     return copy(apple = newApple, head = newHead, body = newBody)
   }
 
-  private def placeApple() : Point = {
+  private def placeApple(body : List[Point], head : Point) : Point = {
     for (y <- 0 until dims.height; x <- 0 until dims.width) {
       if (!(body contains Point(x, y)) && head != Point(x, y)) spots = spots :+ Point(x, y)
     }
@@ -109,37 +108,16 @@ case class GameState (
 
   }
 
-  private def moveBody(d : Direction) : List[Point] = {//TODO update name
-    val newBody =
-      if(d == North()) {
-        if(logic.lastDirection == East()) movePoint(body.head, 1, 0) +: body
-        else if(logic.lastDirection == West()) movePoint(body.head, -1, 0) +: body
-        else movePoint(body.head, 0, -1) +: body
-  
-      }
-      else if(d == East()) {
-        if(logic.lastDirection == North()) movePoint(body.head, 0, -1) +: body
-        else if(logic.lastDirection == South()) movePoint(body.head, 0, 1) +: body
-        else movePoint(body.head, 1, 0) +: body
-      }
-      else if(d == South()) {
-        if(logic.lastDirection == East()) movePoint(body.head, 1, 0) +: body
-        else if(logic.lastDirection == West()) movePoint(body.head, -1, 0) +: body
-        else movePoint(body.head, 0,1) +: body
-      }
-      else {
-        if (logic.lastDirection == North()) movePoint(body.head, 0, -1) +: body
-        else if (logic.lastDirection == South()) movePoint(body.head, 0, 1) +: body
-        else movePoint(body.head, -1, 0) +: body
-      }
+  private def moveBody(newHead : Point) : List[Point] = {//TODO update name
+    val newBody = head +: body
     val finalBody =
-      if(logic.growCount == 0) body.dropRight(1)
+      if(logic.growCount == 0) newBody.dropRight(1)
       else {
         logic.growCount -= 1
         newBody
       }
 
-    if(head == apple) {
+    if(newHead == apple) {
       logic.growCount += 3
     }
     return finalBody
@@ -154,11 +132,6 @@ object GameLogic {
 
   val DrawSizeFactor = 2.0 // increase this to make the game bigger (for high-res screens)
   // or decrease to make game smaller
-//  var currDirection : Direction = East()
-//  var lastDirection : Direction = East()
-//  var growCount : Int  = 0
-//  var gameOver : Boolean = false
-//  var switch : Boolean = true
     var spots : List[Point] = List[Point]()
 
     // These are the dimensions used when playing the game.
