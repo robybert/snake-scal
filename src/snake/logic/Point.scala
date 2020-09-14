@@ -7,5 +7,10 @@ case class Point(x : Int, y : Int){
 
   def movePoint(d : Direction): Point = this + d.toPoint
 
-  def checkOverflow(dims : Dimensions) : Point = Point((this.x + dims.width) % dims.width, (this.y + dims.height) % dims.height)
+  def checkOverflow(dims : Dimensions) : Point =  {
+    val p = Point(this.x % dims.width, this.y % dims.height)
+    if(p.x < 0) p + Point(dims.width, 0)
+    else if (p.y < 0) p + Point(0, dims.height)
+    else p
+  }
 }

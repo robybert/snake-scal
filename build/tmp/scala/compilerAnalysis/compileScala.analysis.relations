@@ -35,9 +35,9 @@ products:
    /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/Direction.scala -> /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/build/classes/scala/main/snake/logic/West$.class
    /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/Direction.scala -> /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/build/classes/scala/main/snake/logic/West.class
    /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/GameLogic.scala -> /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/build/classes/scala/main/snake/logic/GameLogic$.class
+   /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/GameLogic.scala -> /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/build/classes/scala/main/snake/logic/GameLogic$GameState$.class
+   /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/GameLogic.scala -> /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/build/classes/scala/main/snake/logic/GameLogic$GameState.class
    /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/GameLogic.scala -> /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/build/classes/scala/main/snake/logic/GameLogic.class
-   /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/GameLogic.scala -> /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/build/classes/scala/main/snake/logic/GameState$.class
-   /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/GameLogic.scala -> /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/build/classes/scala/main/snake/logic/GameState.class
    /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/Point.scala -> /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/build/classes/scala/main/snake/logic/Point$.class
    /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/Point.scala -> /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/build/classes/scala/main/snake/logic/Point.class
 binary dependencies:
@@ -142,7 +142,7 @@ class names:
    /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/Direction.scala -> snake.logic.West$
    /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/GameLogic.scala -> snake.logic.GameLogic
    /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/GameLogic.scala -> snake.logic.GameLogic$
-   /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/GameLogic.scala -> snake.logic.GameState
-   /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/GameLogic.scala -> snake.logic.GameState$
+   /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/GameLogic.scala -> snake.logic.GameLogic$GameState
+   /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/GameLogic.scala -> snake.logic.GameLogic$GameState$
    /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/Point.scala -> snake.logic.Point
    /home/robbert/Documenten/Computer Science/Year2/Obj-Oriented and func programming/gamebase-snake/src/snake/logic/Point.scala -> snake.logic.Point$

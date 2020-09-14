@@ -38,86 +38,83 @@ class GameLogic(val random: RandomGenerator,
                               growCount = 0,
                               direction = East(),
                               changedDir = false,
-                              gameOverBool =  false,
-                              this)
+                              gameOverBool =  false)
     gameState = gameState.initSnake()
     return gameState
   }
 
   def getCellType(p : Point): CellType = state.cellTypeAt(p)
-}
-
-case class GameState (
-  dims : Dimensions,
-  apple : Point,
-  head : Point,
-  body : List[Point],
-  growCount : Int,
-  direction: Direction,
-  changedDir : Boolean,
-  gameOverBool : Boolean,
-  logic : GameLogic){
-  def cellTypeAt(p : Point) : CellType = {
-    if(isHead(p)) SnakeHead(direction)
-    else if(isBody(p)) SnakeBody(getColor(p))
-    else if(isApple(p)) Apple()
-    else Empty()
-  }
-  private def isApple(p : Point) : Boolean = (apple == p)
-  private def isHead(p : Point) : Boolean = (head == p)
-  private def isBody(p : Point) : Boolean = (body contains p)
-
-  def moveSnake() : GameState = {
-    val newHead = head.movePoint(direction).checkOverflow(dims)
-    val (newBody, newGrowCount) = moveBody(newHead)
-    val newApple =
-      if(newHead == apple) placeApple(newBody, newHead)
-      else apple
-    return copy(apple = newApple, head = newHead, body = newBody, growCount = newGrowCount)
-  }
-
-  def initSnake() : GameState = {
-    copy(apple = placeApple(body, head))
-  }
-
-  def gameOver() : GameState = copy(gameOverBool = true)
-
-  def placeApple(newBody : List[Point], newHead : Point) : Point = {
-    var spots : List[Point] = List[Point]()
-
-    for (y <- 0 until dims.height; x <- 0 until dims.width) {
-      if (!(newBody contains Point(x, y)) && newHead != Point(x, y)) spots = spots :+ Point(x, y)
+  case class GameState (
+                         dims : Dimensions,
+                         apple : Point,
+                         head : Point,
+                         body : List[Point],
+                         growCount : Int,
+                         direction: Direction,
+                         changedDir : Boolean,
+                         gameOverBool : Boolean){
+    def cellTypeAt(p : Point) : CellType = {
+      if(isHead(p)) SnakeHead(direction)
+      else if(isBody(p)) SnakeBody(getColor(p))
+      else if(isApple(p)) Apple()
+      else Empty()
     }
-    val placedApple =
-      if(spots.length > 0) spots(logic.random.randomInt(spots.length))
-      else null
-    return placedApple
-  }
+    private def isApple(p : Point) : Boolean = (apple == p)
+    private def isHead(p : Point) : Boolean = (head == p)
+    private def isBody(p : Point) : Boolean = (body contains p)
 
-  private def moveBody(newHead : Point) : (List[Point], Int) = {
-    val newBody = head +: body
-    var newGrowCount = growCount
-    val finalBody =
-      if(growCount == 0) newBody.dropRight(1)
-      else {
-        newGrowCount = growCount - 1
-        newBody
+    def moveSnake() : GameState = {
+      val newHead = head.movePoint(direction).checkOverflow(dims)
+      val (newBody, newGrowCount) = moveBody(newHead)
+      val newApple =
+        if(newHead == apple) placeApple(newBody, newHead)
+        else apple
+      return copy(apple = newApple, head = newHead, body = newBody, growCount = newGrowCount)
+    }
+
+    def initSnake() : GameState = {
+      copy(apple = placeApple(body, head))
+    }
+
+    def gameOver() : GameState = copy(gameOverBool = true)
+
+    def placeApple(newBody : List[Point], newHead : Point) : Point = {
+      var spots : List[Point] = List[Point]()
+
+      for (y <- 0 until dims.height; x <- 0 until dims.width) {
+        if (!(newBody contains Point(x, y)) && newHead != Point(x, y)) spots = spots :+ Point(x, y)
       }
-
-    if(newHead == apple) {
-      newGrowCount += 3
+      val placedApple =
+        if(spots.length > 0) spots(random.randomInt(spots.length))
+        else null
+      return placedApple
     }
-    return (finalBody, newGrowCount)
-  }
 
-  def getColor(p : Point) : Float = {
-    (1 / (body.length).toFloat * (body.indexOf(p)).toFloat)
-  }
-  def resetChangedDir() : GameState = copy(changedDir = false)
+    private def moveBody(newHead : Point) : (List[Point], Int) = {
+      val newBody = head +: body
+      var newGrowCount = growCount
+      val finalBody =
+        if(growCount == 0) newBody.dropRight(1)
+        else {
+          newGrowCount = growCount - 1
+          newBody
+        }
 
-  def changeDir(d : Direction) : GameState = {
-    if(!changedDir) copy(direction = d, changedDir = true)
-    else this
+      if(newHead == apple) {
+        newGrowCount += 3
+      }
+      return (finalBody, newGrowCount)
+    }
+
+    def getColor(p : Point) : Float = {
+      (1 / (body.length).toFloat * (body.indexOf(p)).toFloat)
+    }
+    def resetChangedDir() : GameState = copy(changedDir = false)
+
+    def changeDir(d : Direction) : GameState = {
+      if(!changedDir) copy(direction = d, changedDir = true)
+      else this
+    }
   }
 }
 
