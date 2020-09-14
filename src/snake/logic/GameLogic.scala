@@ -1,6 +1,6 @@
 package snake.logic
 
-import engine.random.{RandomGenerator, ScalaRandomGen}
+import engine.random.RandomGenerator
 import snake.logic.GameLogic._
 
 /** To implement Snake, complete the ``TODOs`` below.
@@ -10,39 +10,38 @@ import snake.logic.GameLogic._
  */
 class GameLogic(val random: RandomGenerator,
                 val gridDims : Dimensions) {
-  var state = GameState(gridDims, placeApple(gridDims, List(Point(1, 0), Point(0, 0)), Point(2, 0), this), Point(2, 0), List(Point(1, 0), Point(0, 0)), this)
-  var gameOverBool : Boolean = false
-  var switch = true
-  var growCount = 0
-  var currDirection : Direction = East()
-  var lastDirection : Direction = East()
+  var state = initGameState()
 
   def gameOver: Boolean = {
-    if(state.body contains state.head) gameOverBool = true
-    return gameOverBool
+    if(state.body contains state.head)  state = state.gameOver()
+    return state.gameOverBool
   }
 
   def step(): Unit = {
-    state = state.moveSnake()
-    lastDirection = currDirection
-    switch = true
+    if(!state.gameOverBool) {
+      state = state.moveSnake()
+    }
+    state = state.resetChangedDir()
   }
 
   def setReverse(r: Boolean): Unit = ()
 
   def changeDir(d: Direction): Unit = {
-    if(switch) {
-      lastDirection = currDirection
-      if (d.opposite != lastDirection) {
-        d match {
-          case North() => currDirection = North()
-          case East() => currDirection = East()
-          case South() => currDirection = South()
-          case West() => currDirection = West()
-        }
-        switch = false
-      }
-    }
+    if(d != state.direction.opposite) state = state.changeDir(d)
+  }
+
+  def initGameState() : GameState ={
+    var gameState = GameState(dims = gridDims,
+                              apple = null,
+                              head = Point(2, 0),
+                              body = List(Point(1, 0), Point(0, 0)),
+                              growCount = 0,
+                              direction = East(),
+                              changedDir = false,
+                              gameOverBool =  false,
+                              this)
+    gameState = gameState.initSnake()
+    return gameState
   }
 
   def getCellType(p : Point): CellType = state.cellTypeAt(p)
@@ -53,49 +52,72 @@ case class GameState (
   apple : Point,
   head : Point,
   body : List[Point],
-  logic: GameLogic){
+  growCount : Int,
+  direction: Direction,
+  changedDir : Boolean,
+  gameOverBool : Boolean,
+  logic : GameLogic){
   def cellTypeAt(p : Point) : CellType = {
-    if(isHead(p)) SnakeHead(logic.currDirection)
-    else if(isBody(p)) SnakeBody(1)//TODO fix float value
+    if(isHead(p)) SnakeHead(direction)
+    else if(isBody(p)) SnakeBody(getColor(p))
     else if(isApple(p)) Apple()
     else Empty()
   }
   private def isApple(p : Point) : Boolean = (apple == p)
   private def isHead(p : Point) : Boolean = (head == p)
   private def isBody(p : Point) : Boolean = (body contains p)
-  private def movePoint(p : Point, x : Int, y : Int) : Point = {
-    if((p.x + x) < 0) Point(dims.width - 1, p.y)
-    else if((p.x + x) >= dims.width) Point(0, p.y)
-    else if((p.y + y) < 0) Point(p.x, dims.height - 1)
-    else if((p.y + y) >= dims.height) Point(p.x, 0)
-    else Point(p.x + x, p.y + y)
-  }
+
   def moveSnake() : GameState = {
-    val newHead = 
-      if(logic.currDirection == North()) movePoint(head, 0, -1)
-      else if(logic.currDirection == East()) movePoint(head, 1, 0)
-      else if(logic.currDirection == South()) movePoint(head, 0 , 1)
-      else movePoint(head, -1, 0)
-    val newBody = moveBody(newHead)
+    val newHead = head.movePoint(direction).checkOverflow(dims)
+    val (newBody, newGrowCount) = moveBody(newHead)
     val newApple =
-      if(newHead == apple) placeApple(dims, newBody, newHead, logic)
+      if(newHead == apple) placeApple(newBody, newHead)
       else apple
-    return copy(apple = newApple, head = newHead, body = newBody)
+    return copy(apple = newApple, head = newHead, body = newBody, growCount = newGrowCount)
   }
 
-  private def moveBody(newHead : Point) : List[Point] = {
+  def initSnake() : GameState = {
+    copy(apple = placeApple(body, head))
+  }
+
+  def gameOver() : GameState = copy(gameOverBool = true)
+
+  def placeApple(newBody : List[Point], newHead : Point) : Point = {
+    var spots : List[Point] = List[Point]()
+
+    for (y <- 0 until dims.height; x <- 0 until dims.width) {
+      if (!(newBody contains Point(x, y)) && newHead != Point(x, y)) spots = spots :+ Point(x, y)
+    }
+    val placedApple =
+      if(spots.length > 0) spots(logic.random.randomInt(spots.length))
+      else null
+    return placedApple
+  }
+
+  private def moveBody(newHead : Point) : (List[Point], Int) = {
     val newBody = head +: body
+    var newGrowCount = growCount
     val finalBody =
-      if(logic.growCount == 0) newBody.dropRight(1)
+      if(growCount == 0) newBody.dropRight(1)
       else {
-        logic.growCount -= 1
+        newGrowCount = growCount - 1
         newBody
       }
 
     if(newHead == apple) {
-      logic.growCount += 3
+      newGrowCount += 3
     }
-    return finalBody
+    return (finalBody, newGrowCount)
+  }
+
+  def getColor(p : Point) : Float = {
+    (1 / (body.length).toFloat * (body.indexOf(p)).toFloat)
+  }
+  def resetChangedDir() : GameState = copy(changedDir = false)
+
+  def changeDir(d : Direction) : GameState = {
+    if(!changedDir) copy(direction = d, changedDir = true)
+    else this
   }
 }
 
@@ -106,18 +128,6 @@ object GameLogic {
 
   val DrawSizeFactor = 2.0 // increase this to make the game bigger (for high-res screens)
   // or decrease to make game smaller
-    var spots : List[Point] = List[Point]()
-
-  def placeApple(dims : Dimensions, body : List[Point], head : Point, logic : GameLogic) : Point = {
-    for (y <- 0 until dims.height; x <- 0 until dims.width) {
-      if (!(body contains Point(x, y)) && head != Point(x, y)) spots = spots :+ Point(x, y)
-    }
-    val placedApple =
-      if(spots.length > 0) spots(logic.random.randomInt(spots.length))
-      else null
-    spots = List[Point]()
-    return placedApple
-  }
 
     // These are the dimensions used when playing the game.
   // When testing the game, other dimensions are passed to
