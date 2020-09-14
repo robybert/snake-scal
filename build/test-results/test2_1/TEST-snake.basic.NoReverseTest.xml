@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="snake.basic.NoReverseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-09-13T19:34:16" hostname="JARVIS" time="0.003">
   <properties/>
   <testcase name="TestNoReverseMode" classname="snake.basic.NoReverseTest" time="0.003"/>
+=======
+<testsuite name="snake.basic.NoReverseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-09-14T13:27:03" hostname="JARVIS" time="0.002">
+  <properties/>
+  <testcase name="TestNoReverseMode" classname="snake.basic.NoReverseTest" time="0.002"/>
+>>>>>>> immutable
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
