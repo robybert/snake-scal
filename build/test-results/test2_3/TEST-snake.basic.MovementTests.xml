@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="snake.basic.MovementTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-09-17T19:02:06" hostname="JARVIS" time="0.018">
+<testsuite name="snake.basic.MovementTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-09-17T19:47:56" hostname="JARVIS" time="0.016">
   <properties/>
   <testcase name="testMove" classname="snake.basic.MovementTests" time="0.003"/>
   <testcase name="testChangeDirs" classname="snake.basic.MovementTests" time="0.007"/>

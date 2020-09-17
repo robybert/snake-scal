@@ -27,8 +27,8 @@ class GameLogic(val random: RandomGenerator,
                               head = Point(2, 0),
                               body = List(Point(1, 0), Point(0, 0)),
                               growCount = 0,
-                              direction = East(),
-                              changedDir = false,
+                              currDirection = East(),
+                              newDirection = East(),
                               gameOverBool =  false)
     initGameState = initGameState.initSnake()
     val initGameStack : GameStack = GameStack(initGameState)
@@ -46,8 +46,8 @@ class GameLogic(val random: RandomGenerator,
     def gameOver : Boolean = currentFrame.gameOverBool
 
     def step() : Unit = {
-      if(reverseActive) frames = frames.pop
-      else if(!currentFrame.gameOverBool)frames = frames.push(currentFrame.moveSnake())
+      if(reverseActive && frames.size > 1) frames = frames.pop
+      else if(!currentFrame.gameOverBool && !reverseActive)frames = frames.push(currentFrame.moveSnake())
     }
 
     def setReverse(r : Boolean) : Unit = {
@@ -57,7 +57,7 @@ class GameLogic(val random: RandomGenerator,
     def cellTypeAt(p : Point) : CellType = currentFrame.cellTypeAt(p)
 
     def changeDir(d : Direction) : Unit = {
-      if(d != currentFrame.direction.opposite && !currentFrame.changedDir){
+      if(d != currentFrame.currDirection.opposite) { //&& currentFrame.currDirection == currentFrame.newDirection){
         val replaceFrame = currentFrame
         frames = frames.pop
         frames = frames.push(replaceFrame.changeDir(d))
@@ -71,11 +71,11 @@ class GameLogic(val random: RandomGenerator,
                          head : Point,
                          body : List[Point],
                          growCount : Int,
-                         direction: Direction,
-                         changedDir : Boolean,
+                         currDirection: Direction,
+                         newDirection : Direction,
                          gameOverBool : Boolean){
     def cellTypeAt(p : Point) : CellType = {
-      if(isHead(p)) SnakeHead(direction)
+      if(isHead(p)) SnakeHead(currDirection)
       else if(isBody(p)) SnakeBody(getColor(p))
       else if(isApple(p)) Apple()
       else Empty()
@@ -85,13 +85,13 @@ class GameLogic(val random: RandomGenerator,
     private def isBody(p : Point) : Boolean = (body contains p)
 
     def moveSnake() : GameState = {
-      val newHead = head.movePoint(direction).checkOverflow(dims)
+      val newHead = head.movePoint(newDirection).checkOverflow(dims)
       val (newBody, newGrowCount) = moveBody(newHead)
       val newApple =
         if(newHead == apple) placeApple(newBody, newHead)
         else apple
       if(newBody contains newHead) return gameOver()
-      else return copy(apple = newApple, head = newHead, body = newBody, growCount = newGrowCount, changedDir = false)
+      else return copy(apple = newApple, head = newHead, body = newBody, growCount = newGrowCount, currDirection = newDirection)
     }
 
     def initSnake() : GameState = {
@@ -128,7 +128,7 @@ class GameLogic(val random: RandomGenerator,
 
     def getColor(p : Point) : Float = (1 / (body.length).toFloat * (body.indexOf(p)).toFloat)
 
-    def changeDir(d : Direction) : GameState = copy(direction = d, changedDir = true)
+    def changeDir(d : Direction) : GameState = copy(newDirection = d)
   }
 }
 
