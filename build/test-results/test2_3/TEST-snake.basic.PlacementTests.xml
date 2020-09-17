@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="snake.basic.PlacementTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-09-17T19:47:56" hostname="JARVIS" time="0.066">
+<testsuite name="snake.basic.PlacementTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-09-17T19:50:26" hostname="JARVIS" time="0.064">
   <properties/>
-  <testcase name="testStartCorrectly" classname="snake.basic.PlacementTests" time="0.056"/>
+  <testcase name="testStartCorrectly" classname="snake.basic.PlacementTests" time="0.055"/>
   <testcase name="testApplePos3" classname="snake.basic.PlacementTests" time="0.002"/>
-  <testcase name="testApplePos8" classname="snake.basic.PlacementTests" time="0.002"/>
+  <testcase name="testApplePos8" classname="snake.basic.PlacementTests" time="0.001"/>
   <testcase name="testNoRoomForApple" classname="snake.basic.PlacementTests" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

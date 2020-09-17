@@ -23,13 +23,13 @@ class GameLogic(val random: RandomGenerator,
 
   def initGameStack() : GameStack = {
     var initGameState = GameState(dims = gridDims,
-                              apple = null,
-                              head = Point(2, 0),
-                              body = List(Point(1, 0), Point(0, 0)),
-                              growCount = 0,
-                              currDirection = East(),
-                              newDirection = East(),
-                              gameOverBool =  false)
+                                  apple = null,
+                                  head = Point(2, 0),
+                                  body = List(Point(1, 0), Point(0, 0)),
+                                  growCount = 0,
+                                  currentDirection = East(),
+                                  newDirection = East(),
+                                  gameOverBool =  false)
     initGameState = initGameState.initSnake()
     val initGameStack : GameStack = GameStack(initGameState)
     return initGameStack
@@ -37,7 +37,7 @@ class GameLogic(val random: RandomGenerator,
 
   def getCellType(p : Point): CellType = gameStack.cellTypeAt(p)
 
-  case class GameStack (start : GameState) {
+  case class GameStack (start : GameState) {//in separate file or does not matter?
 
     private var frames : SStack[GameState] = SStack[GameState](start)
     private var reverseActive : Boolean = false
@@ -57,25 +57,25 @@ class GameLogic(val random: RandomGenerator,
     def cellTypeAt(p : Point) : CellType = currentFrame.cellTypeAt(p)
 
     def changeDir(d : Direction) : Unit = {
-      if(d != currentFrame.currDirection.opposite) { //&& currentFrame.currDirection == currentFrame.newDirection){
+      if(d != currentFrame.currentDirection.opposite) {
         val replaceFrame = currentFrame
         frames = frames.pop
         frames = frames.push(replaceFrame.changeDir(d))
       }
     }
 
-    }//TODO implement me
-  case class GameState (
+    }
+  case class GameState (//in separate class??? or does not matter
                          dims : Dimensions,
-                         apple : Point,
+                         apple : Point,//set of points needed for 0,5 or is 1D list enough?
                          head : Point,
                          body : List[Point],
                          growCount : Int,
-                         currDirection: Direction,
+                         currentDirection: Direction,
                          newDirection : Direction,
                          gameOverBool : Boolean){
     def cellTypeAt(p : Point) : CellType = {
-      if(isHead(p)) SnakeHead(currDirection)
+      if(isHead(p)) SnakeHead(currentDirection)
       else if(isBody(p)) SnakeBody(getColor(p))
       else if(isApple(p)) Apple()
       else Empty()
@@ -91,7 +91,7 @@ class GameLogic(val random: RandomGenerator,
         if(newHead == apple) placeApple(newBody, newHead)
         else apple
       if(newBody contains newHead) return gameOver()
-      else return copy(apple = newApple, head = newHead, body = newBody, growCount = newGrowCount, currDirection = newDirection)
+      else return copy(apple = newApple, head = newHead, body = newBody, growCount = newGrowCount, currentDirection = newDirection)
     }
 
     def initSnake() : GameState = {
