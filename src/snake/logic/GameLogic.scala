@@ -81,8 +81,8 @@ class GameLogic(val random: RandomGenerator,
     def placeApple(newBody : List[Point], newHead : Point) : Point = {
       var spots : List[Point] = List[Point]()
 
-      for (y <- 0 until dims.height; x <- 0 until dims.width) {
-        if (!(newBody contains Point(x, y)) && newHead != Point(x, y)) spots = spots :+ Point(x, y)
+      for (i <- dims.allPointsInside) {
+        if (!(newBody contains i) && newHead != i) spots = spots :+ i
       }
       val placedApple =
         if(spots.length > 0) spots(random.randomInt(spots.length))
