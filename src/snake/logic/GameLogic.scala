@@ -100,15 +100,12 @@ class GameLogic(val random: RandomGenerator,
           newBody
         }
 
-      if(newHead == apple) {
-        newGrowCount += 3
-      }
+      if(newHead == apple) newGrowCount += 3
       return (finalBody, newGrowCount)
     }
 
-    def getColor(p : Point) : Float = {
-      (1 / (body.length).toFloat * (body.indexOf(p)).toFloat)
-    }
+    def getColor(p : Point) : Float = (1 / (body.length).toFloat * (body.indexOf(p)).toFloat)
+
     def resetChangedDir() : GameState = copy(changedDir = false)
 
     def changeDir(d : Direction) : GameState = {
