@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="snake.basic.PlacementTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-09-14T13:52:53" hostname="JARVIS" time="0.088">
+<testsuite name="snake.basic.PlacementTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-09-17T16:31:15" hostname="JARVIS" time="0.073">
   <properties/>
-  <testcase name="testStartCorrectly" classname="snake.basic.PlacementTests" time="0.076"/>
+  <testcase name="testStartCorrectly" classname="snake.basic.PlacementTests" time="0.054"/>
   <testcase name="testApplePos3" classname="snake.basic.PlacementTests" time="0.002"/>
   <testcase name="testApplePos8" classname="snake.basic.PlacementTests" time="0.002"/>
-  <testcase name="testNoRoomForApple" classname="snake.basic.PlacementTests" time="0.007"/>
+  <testcase name="testNoRoomForApple" classname="snake.basic.PlacementTests" time="0.013"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
