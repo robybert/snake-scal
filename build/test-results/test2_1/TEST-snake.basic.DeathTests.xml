@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="snake.basic.DeathTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-09-17T16:41:04" hostname="JARVIS" time="0.009">
+<testsuite name="snake.basic.DeathTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-09-17T17:51:15" hostname="JARVIS" time="0.009">
   <properties/>
   <testcase name="testGameOver" classname="snake.basic.DeathTests" time="0.003"/>
-  <testcase name="testPreciselyDoesNotDie" classname="snake.basic.DeathTests" time="0.002"/>
-  <testcase name="testNoEscapeGameOver" classname="snake.basic.DeathTests" time="0.002"/>
+  <testcase name="testPreciselyDoesNotDie" classname="snake.basic.DeathTests" time="0.003"/>
+  <testcase name="testNoEscapeGameOver" classname="snake.basic.DeathTests" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

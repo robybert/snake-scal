@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="snake.basic.FullGameTests" tests="7" skipped="0" failures="0" errors="0" timestamp="2020-09-17T19:02:06" hostname="JARVIS" time="0.039">
+  <properties/>
+  <testcase name="testGame3x1" classname="snake.basic.FullGameTests" time="0.002"/>
+  <testcase name="testGame6x6" classname="snake.basic.FullGameTests" time="0.01"/>
+  <testcase name="testGame6x3" classname="snake.basic.FullGameTests" time="0.004"/>
+  <testcase name="testGame10x7" classname="snake.basic.FullGameTests" time="0.011"/>
+  <testcase name="testInterleave6x3and10x7" classname="snake.basic.FullGameTests" time="0.005"/>
+  <testcase name="testInterleave6x6and10x7" classname="snake.basic.FullGameTests" time="0.005"/>
+  <testcase name="testInterleave6x3and6x6" classname="snake.basic.FullGameTests" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
