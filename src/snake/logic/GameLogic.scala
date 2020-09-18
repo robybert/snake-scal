@@ -29,7 +29,8 @@ class GameLogic(val random: RandomGenerator,
                                   growCount = 0,
                                   currentDirection = East(),
                                   newDirection = East(),
-                                  gameOverBool =  false)
+                                  gameOverBool =  false,
+                                  logic = this)
     initGameState = initGameState.initSnake()
     val initGameStack : GameStack = GameStack(initGameState)
     return initGameStack
@@ -73,7 +74,8 @@ class GameLogic(val random: RandomGenerator,
                          growCount : Int,
                          currentDirection: Direction,
                          newDirection : Direction,
-                         gameOverBool : Boolean){
+                         gameOverBool : Boolean,
+                         logic : GameLogic){
     def cellTypeAt(p : Point) : CellType = {
       if(isHead(p)) SnakeHead(currentDirection)
       else if(isBody(p)) SnakeBody(getColor(p))
@@ -107,7 +109,7 @@ class GameLogic(val random: RandomGenerator,
         if (!(newBody contains i) && newHead != i) spots = spots :+ i
       }
       val placedApple =
-        if(spots.length > 0) spots(random.randomInt(spots.length))
+        if(spots.length > 0) spots(logic.random.randomInt(spots.length))
         else null
       return placedApple
     }

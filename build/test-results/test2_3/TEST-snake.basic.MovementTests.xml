@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="snake.basic.MovementTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-09-17T19:50:26" hostname="JARVIS" time="0.017">
+<testsuite name="snake.basic.MovementTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-09-18T10:21:12" hostname="JARVIS" time="0.029">
   <properties/>
-  <testcase name="testMove" classname="snake.basic.MovementTests" time="0.002"/>
-  <testcase name="testChangeDirs" classname="snake.basic.MovementTests" time="0.007"/>
+  <testcase name="testMove" classname="snake.basic.MovementTests" time="0.004"/>
+  <testcase name="testChangeDirs" classname="snake.basic.MovementTests" time="0.013"/>
   <testcase name="testIgnoreEatHead" classname="snake.basic.MovementTests" time="0.003"/>
-  <testcase name="testQuickSwitch" classname="snake.basic.MovementTests" time="0.002"/>
-  <testcase name="testQuickSwitch2" classname="snake.basic.MovementTests" time="0.002"/>
+  <testcase name="testQuickSwitch" classname="snake.basic.MovementTests" time="0.004"/>
+  <testcase name="testQuickSwitch2" classname="snake.basic.MovementTests" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

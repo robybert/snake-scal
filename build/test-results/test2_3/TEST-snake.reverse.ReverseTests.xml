@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="snake.reverse.ReverseTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-09-17T19:50:26" hostname="JARVIS" time="0.018">
+<testsuite name="snake.reverse.ReverseTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-09-18T10:21:12" hostname="JARVIS" time="0.022">
   <properties/>
   <testcase name="testReverseSimple" classname="snake.reverse.ReverseTests" time="0.002"/>
   <testcase name="testReversePastStart" classname="snake.reverse.ReverseTests" time="0.002"/>
-  <testcase name="testReverseGameOver" classname="snake.reverse.ReverseTests" time="0.002"/>
+  <testcase name="testReverseGameOver" classname="snake.reverse.ReverseTests" time="0.003"/>
   <testcase name="testChangeThePast" classname="snake.reverse.ReverseTests" time="0.002"/>
-  <testcase name="testReverseLong" classname="snake.reverse.ReverseTests" time="0.01"/>
+  <testcase name="testReverseLong" classname="snake.reverse.ReverseTests" time="0.011"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
