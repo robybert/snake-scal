@@ -24,8 +24,7 @@ class GameLogic(val random: RandomGenerator,
   def initGameStack() : GameStack = {
     var initGameState = GameState(dims = gridDims,
                                   apple = null,
-                                  head = Point(2, 0),
-                                  body = List(Point(1, 0), Point(0, 0)),
+                                  snake = List(Point(2, 0), Point(1, 0), Point(0, 0)),
                                   growCount = 0,
                                   currentDirection = East(),
                                   newDirection = East(),
@@ -68,9 +67,8 @@ class GameLogic(val random: RandomGenerator,
     }
   case class GameState (//in separate class??? or does not matter
                          dims : Dimensions,
-                         apple : Point,//set of points needed for 0,5 or is 1D list enough?
-                         head : Point,
-                         body : List[Point],
+                         apple : Point,//set of points needed for 0,5 or is 1D list enough
+                         snake : List[Point],
                          growCount : Int,
                          currentDirection: Direction,
                          newDirection : Direction,
@@ -83,30 +81,31 @@ class GameLogic(val random: RandomGenerator,
       else Empty()
     }
     private def isApple(p : Point) : Boolean = (apple == p)
-    private def isHead(p : Point) : Boolean = (head == p)
-    private def isBody(p : Point) : Boolean = (body contains p)
+    private def isHead(p : Point) : Boolean = (snake(0) == p)
+    private def isBody(p : Point) : Boolean = (snake contains p)
 
     def moveSnake() : GameState = {
-      val newHead = head.movePoint(newDirection).checkOverflow(dims)
+      val newHead = snake(0).movePoint(newDirection).checkOverflow(dims)
       val (newBody, newGrowCount) = moveBody(newHead)
+      val newSnake = newHead +: newBody
       val newApple =
-        if(newHead == apple) placeApple(newBody, newHead)
+        if(newHead == apple) placeApple(newSnake)
         else apple
       if(newBody contains newHead) return gameOver()
-      else return copy(apple = newApple, head = newHead, body = newBody, growCount = newGrowCount, currentDirection = newDirection)
+      else return copy(apple = newApple, snake = newSnake, growCount = newGrowCount, currentDirection = newDirection)
     }
 
     def initSnake() : GameState = {
-      copy(apple = placeApple(body, head))
+      copy(apple = placeApple(snake))
     }
 
     private def gameOver() : GameState = copy(gameOverBool = true)
 
-    def placeApple(newBody : List[Point], newHead : Point) : Point = {
+    def placeApple(snake : List[Point]) : Point = {
       var spots : List[Point] = List[Point]()
 
-      for (i <- dims.allPointsInside) {
-        if (!(newBody contains i) && newHead != i) spots = spots :+ i
+      for(i <- dims.allPointsInside) {
+        if(!(snake contains i)) spots = spots :+ i
       }
       val placedApple =
         if(spots.length > 0) spots(logic.random.randomInt(spots.length))
@@ -115,7 +114,7 @@ class GameLogic(val random: RandomGenerator,
     }
 
     private def moveBody(newHead : Point) : (List[Point], Int) = {
-      val newBody = head +: body
+      val newBody = snake
       var newGrowCount = growCount
       val finalBody =
         if(growCount == 0) newBody.dropRight(1)
@@ -128,7 +127,7 @@ class GameLogic(val random: RandomGenerator,
       return (finalBody, newGrowCount)
     }
 
-    def getColor(p : Point) : Float = (1 / (body.length).toFloat * (body.indexOf(p)).toFloat)
+    def getColor(p : Point) : Float = (1 / (snake.length-1).toFloat * (snake.indexOf(p)).toFloat)//fix this
 
     def changeDir(d : Direction) : GameState = copy(newDirection = d)
   }
